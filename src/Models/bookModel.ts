@@ -10,9 +10,9 @@ export interface BookType extends Document {
 
 const schema = new Schema<BookType>({
     id: {  type: Number},
-    title: { type: String },
-    author: { type: String },
-    genre: { type: String }
+    title: { type: String, required: true },
+    author: { type: String, required: true },
+    genre: { type: String, required: true }
 });
 
 

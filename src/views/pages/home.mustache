@@ -1,25 +1,20 @@
 {{>partials/header}}
-
-{{#banner}}
-<section class="banner" style="background-image: url('images/{{ background }}')">{{ title }}</section>
-<h2>{{ title }} disponíveis para adoção</h2>
-{{/banner}}
-
-<div class="container list">
-    {{#list}}
-        <div class="item">
-            <img src="images/{{ image }}" class="item--image" />
-            <div class="item--name">{{ name }}</div>
-            <div class="item--color">Cor: {{ color }}</div>
-            <div class="item--genre"> {{ sex }}</div>
+<p><h2>Livros Salvos</h2></p>
+<div class="container-book">
+    {{#BdBook}}
+    <div class="view-book">
+            <h2>{{ title }}</h2>
+            <div class="book-body">
+                <p>autor:{{ author }}</P>
+                <p>genero:{{ genre }}</P>
+            </div>
         </div>
-    {{/list}}
+    {{/BdBook}}
 </div>
 
-{{^list}}
+{{^BdBook}}
 <div class="container no-list">
     <h2>Sem livros disponíveis</h2>
 </div>
-{{/list}}
-
+{{/BdBook}}
 {{>partials/footer}}

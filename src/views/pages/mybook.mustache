@@ -1,0 +1,34 @@
+{{>partials/header}}
+
+{{#banner}}
+<section class="banner" style="background-image: url('images/{{ background }}')"></section>
+<h2> disponíveis para adoção</h2>
+{{/banner}}
+
+<div class="container book">
+        <div class="book">
+            <fieldset>
+            <legend>Adicione o seu livro</legend>
+                <form  method="POST" action="createbook">
+                <h2>Titulo</h2><input type="text" name="title" class="title" placeholder="Nome do livro" required></br>
+                <h2>Autor</h2><input type="text" name="author" class="author" placeholder="Autor"required></br>
+                <h2>Genero</h2><input type="text" name="genre" class="genre" placeholder="Genero do livro"required></br>
+                <input class="_input"type="submit" value="criar livro"/><br/>
+            </fieldset>
+        </div>
+</div>
+
+<div class="container-book">
+    {{#BdBook}}
+    <div class="view-book">
+            <h2>{{ title }}</h2>
+            <div class="book-body">
+                <p>autor:{{ author }}</P>
+                <p>genero:{{ genre }}</P>
+            </div>
+        </div>
+    {{/BdBook}}
+</div>
+
+
+{{>partials/footer}}

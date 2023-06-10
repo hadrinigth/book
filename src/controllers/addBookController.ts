@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
 import Book, * as bookModel from '../Models/bookModel';
 
+
+
 export const addBook = (req: Request, res: Response) => {
-    res.render('pages/addbook');
+    res.render('pages/mybook', { BdBook });
 };
 
 const addSeqId = async () => {
@@ -32,3 +34,6 @@ export const createBook = async (req: Request, res: Response) => {
         res.status(500).send('Erro ao tentar salvar o livro.');
     }
 };
+
+
+
